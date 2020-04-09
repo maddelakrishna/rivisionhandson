@@ -21,6 +21,7 @@ public class ArrayListCaseStuddy1 {
 	
 	public static boolean storeEmployee(Employee emp)
 	{
+		
 		boolean status = false;
 		File file = new File("E:\\MindSpeed\\secondbatch\\employee.txt");
 		FileOutputStream fos =null;
