@@ -14,10 +14,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 public class Iodemo {
 	public static List<Customer> listofcustomers() throws IOException{
@@ -97,7 +100,7 @@ public class Iodemo {
 	public static void main(String args[]) throws IOException {
 		while(true) {
 		System.out.println("Enter your choice");
-		System.out.println("1:Display All Customers\t2:Display by age\t3:Display by city\t4:Exit");
+		System.out.println("1:Display All Customers\t2:Display by age\t3:Display by city\t4:Transfer\t5:Replace\t6:Exit");
 		Scanner sc=new Scanner(System.in);	
 		int choice=Integer.parseInt(sc.next());
 		switch(choice) {
@@ -115,6 +118,65 @@ public class Iodemo {
 			displaybycity(name);
 			break;
 		case 4:
+			System.out.println("Enter old and new cities");
+			String oldcity=sc.next();
+			String newcity=sc.next();
+			List<Customer> list=listofcustomers();
+			int i=0;
+			for(Customer c:list) {
+				Address a1=c.getAddress();
+				if(a1.getCity().equalsIgnoreCase(oldcity)) {
+					a1.setCity(newcity);
+					list.get(i).setAddress(a1);
+				}
+				i++;
+			}
+			
+			for(Customer c1:list)
+			{
+				System.out.println(c1);
+			}
+			break;
+		case 5:
+			System.out.println("Enter id");
+			int id=Integer.parseInt(sc.next());
+			List<Customer> list2=listofcustomers();
+			
+			CopyOnWriteArrayList<Customer> list1 = new CopyOnWriteArrayList<Customer>(list2);
+			
+			int index=0;
+			Customer cus=new Customer();
+			cus.setId(51);
+			cus.setName("bhavya");
+			// [10,20,30,10,20]
+			Iterator<Customer> l1=list1.iterator();
+			while(l1.hasNext()) {
+				if(l1.next().getId()==id) {
+				//	list1.set(index, cus);
+					list1.remove(index);
+					//list1.get(index).setEmail("email");
+					}
+					index++;
+				}
+				
+			
+			/*for(Customer c1:list1) {
+				if(c1.getId()==id) {
+				list1.set(index, cus);
+				}
+				index++;
+			}*/
+			
+			for(Customer cus1:list1) {
+				System.out.println(cus1);
+			}
+			break;
+			
+			
+			
+			// New Customer
+			
+		case 6:
 			System.exit(0);
 		}
 		
