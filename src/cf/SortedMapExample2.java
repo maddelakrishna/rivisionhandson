@@ -39,7 +39,8 @@ public class SortedMapExample2 {
 	      
 	      
 	      empMap.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).forEach(t->System.out.println(t));;
-	      
+	      System.out.println("******");
+	      System.out.println(empMap);
 		/*
 		 * Set<Map.Entry<Employee, String>> entries = empMap.entrySet();
 		 * 
