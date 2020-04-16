@@ -26,6 +26,9 @@ map of projects and employees
 
 Note : Add atlease 10 projects 
 
+public void displayByProjectID(Map<Project,Employee> map);
+public void displayByProjectDomain(Map<Project,Employee> map);
+
 
 Map<Project, Employee>   
 
