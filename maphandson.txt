@@ -1,0 +1,32 @@
+
+
+1)  create Employee Class
+Employee 
+ id -int
+ name - String
+ salary - double
+ email -String
+
+2)Create Project Class
+Project 
+
+  id -int
+  domain -String
+  startDate -Date
+  endDate  - Date
+
+
+
+3) Create ProjectUtils Class
+
+   and create the following methods
+   
+public Map<Project,Employee> loadProjects(); - > this methodd should return 
+map of projects and employees 
+
+Note : Add atlease 10 projects 
+
+
+Map<Project, Employee>   
+
+
