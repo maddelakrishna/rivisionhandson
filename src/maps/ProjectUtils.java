@@ -11,15 +11,15 @@ import java.util.Map.Entry;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import cf.Employee;
+import maps.Employee;
 
 public class ProjectUtils {
 	public static Map<Project, Employee> loadProjects() throws ParseException {
 
-		Employee e1 = new Employee(1, "bhanu", "bhanu@gmail.com", 25000);
-		Employee e2 = new Employee(2, "harsha", "harsha@gmail.com", 25000);
-		Employee e3 = new Employee(3, "alekhya", "alekhya@gmail.com", 25000);
-		Employee e4 = new Employee(4, "mounika", "mounika@gmail.com", 25000);
+		Employee e1 = new Employee(1, "bhanu", 25000, "bhanu@gmail.com");
+		Employee e2 = new Employee(2, "harsha", 25000, "harsha@gmail.com");
+		Employee e3 = new Employee(3, "alekhya", 25000, "alekhya@gmail.com");
+		Employee e4 = new Employee(4, "mounika", 25000, "mounika@gmail.com");
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 		Date startdate = sdf.parse("12-12-2019");
